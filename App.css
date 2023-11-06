@@ -27,6 +27,7 @@
   width: 280px;
   height: 340px;
   padding: 5px;
+  overflow-wrap: break-word;
 }
 .res-card:hover {
   border: 1px solid black;

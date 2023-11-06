@@ -23,6 +23,7 @@
 }
 
 .res-card {
+  overflow-wrap: break-word;
   width: 280px;
   height: 340px;
   padding: 5px;

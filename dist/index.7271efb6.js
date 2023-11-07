@@ -27449,39 +27449,48 @@ var _reactDefault = parcelHelpers.interopDefault(_react);
 var _restaurantCard = require("./RestaurantCard");
 var _restaurantCardDefault = parcelHelpers.interopDefault(_restaurantCard);
 var _mockData = require("../utils/mockData");
+var _s = $RefreshSig$();
 const Body = ()=>{
+    _s();
+    const [data, setData] = (0, _react.useState)((0, _mockData.resObj));
+    const onClickHandle = ()=>{
+        const filtedData = (0, _mockData.resObj).filter((item)=>item.info.avgRating >= 4.5);
+        setData(filtedData);
+    };
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         className: "body-container",
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
                 className: "btn",
+                onClick: onClickHandle,
                 children: "Top Rated Restaurant"
             }, void 0, false, {
                 fileName: "src/components/Body.js",
-                lineNumber: 7,
+                lineNumber: 14,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                 className: "res-container",
-                children: (0, _mockData.resObj).map((item)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _restaurantCardDefault.default), {
+                children: data.map((item)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _restaurantCardDefault.default), {
                         resData: item
                     }, item.info.id, false, {
                         fileName: "src/components/Body.js",
-                        lineNumber: 10,
+                        lineNumber: 19,
                         columnNumber: 11
                     }, undefined))
             }, void 0, false, {
                 fileName: "src/components/Body.js",
-                lineNumber: 8,
+                lineNumber: 17,
                 columnNumber: 7
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/components/Body.js",
-        lineNumber: 6,
+        lineNumber: 13,
         columnNumber: 5
     }, undefined);
 };
+_s(Body, "NwMiifurlUHH/btJhREcDU5V2Mo=");
 _c = Body;
 exports.default = Body;
 var _c;

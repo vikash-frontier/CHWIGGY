@@ -4,6 +4,8 @@ import { resObj } from "../utils/mockData";
 const Body = () => {
   const [data, setData] = useState(resObj);
 
+  console.log("hello");
+
   const onClickHandle = () => {
     const filtedData = resObj.filter((item) => item.info.avgRating >= 4.5);
     setData(filtedData);

@@ -1,6 +1,17 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 const Header = () => {
+  const [text, setText] = useState("Login");
+
+  const onTextChanged = () => {
+    setText(text === "Login" ? "Logout" : "Login");
+  };
+  console.log("Header Render");
+
+  useEffect(() => {
+    console.log("UseEffect render");
+  }, [text]);
+
   return (
     <div className="header">
       <div className="logo">
@@ -12,6 +23,9 @@ const Header = () => {
           <li>About Us</li>
           <li>Contact Us</li>
           <li>Cart</li>
+          <button style={{ cursor: "pointer" }} onClick={onTextChanged}>
+            {text}
+          </button>
         </ul>
       </div>
     </div>

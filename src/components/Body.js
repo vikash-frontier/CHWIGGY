@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import RestaurantCard from "./RestaurantCard";
 import { resObj } from "../utils/mockData";
+import Shimmer from "./Shimmer/Shimmer";
 const Body = () => {
   const [data, setData] = useState([]);
   const [filteredData, setFilteredData] = useState([]);
@@ -32,7 +33,9 @@ const Body = () => {
     );
   };
 
-  return (
+  return data?.length === 0 ? (
+    <Shimmer type="card" />
+  ) : (
     <div className="body-container">
       <div className="filter">
         <div>

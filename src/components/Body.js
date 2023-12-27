@@ -10,7 +10,7 @@ const Body = () => {
   const [searchText, setSearchText] = useState("");
 
   const onClickHandle = () => {
-    const filtedData = data.filter((item) => item?.info?.avgRating >= 4.5);
+    const filtedData = data?.filter((item) => item?.info?.avgRating >= 4.5);
     setFilteredData(filtedData);
   };
 
@@ -18,20 +18,23 @@ const Body = () => {
     getApiData();
   }, []);
 
+  console.log(data);
+
   const getApiData = async () => {
     const data = await fetch(
       "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9715987&lng=77.5945627&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
     );
     const res = await data.json();
+    console.log(res);
 
     // console.log(
     //   res.data.cards[2].card.card.gridElements.infoWithStyle.restaurants
     // );
     setData(
-      res?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+      res?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
     setFilteredData(
-      res?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+      res?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
   };
 

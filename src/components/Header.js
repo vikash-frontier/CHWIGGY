@@ -7,7 +7,6 @@ const Header = () => {
   const onTextChanged = () => {
     setText(text === "Login" ? "Logout" : "Login");
   };
-  console.log("Header Render");
 
   useEffect(() => {
     console.log("UseEffect render");
